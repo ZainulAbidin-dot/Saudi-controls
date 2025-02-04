@@ -7,20 +7,9 @@ import FAQ from "../components/sections/FAQ.astro";
 import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Solutions from "../components/sections/Solutions.astro";
-import bg from "../../assets/videos/background-dark.mp4";
 ---
 
 <Layout title="">
-  <video
-  autoplay
-  loop
-  muted
-  playsinline
-  class="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
->
-  <source src={bg} type="video/mp4" />
-  Your browser does not support the video tag.
-</video>  
   <main class="flex flex-col overflow-hidden">
     <Hero className="py-10 md:py-16" />
     <Solutions className="pb-10" />
