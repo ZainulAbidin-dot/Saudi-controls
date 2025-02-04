@@ -1,14 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import Container from "../shared/Container.astro";
 import Paragraph from "../shared/Paragraph.astro";
 import Title from "../shared/Title.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import myImage from "../../assets/images/dev-with-c-1.webp";
 import { solutions } from "../../utils/data.ts";
-import GlassBackground from "../shared/GlassBackground.astro";
-import GlassCard from "../shared/GlassCard.astro";
-import FlipCard from '../shared/FlipCard.astro'
 
 type SolutionsProps = {
   title: string;
@@ -93,9 +89,7 @@ const { className } = Astro.props;
                   ) : solution.index === 2 ? (
                     <div class="grid grid-cols-3 gap-4 h-full mx-auto content-center">
 
-                      {/* <FlipCard /> */}
-
-                      <div class="bg-[#9A73B5] p-6 rounded-lg w-[80%] aspect-square">
+                      <div class="bg-[#9A73B5] p-6 rounded-lg w-[80%] self-stretch grid place-items-center">
                         <Image
                         src={solution.img1 || myImage}
                         alt="banner image"
@@ -104,7 +98,7 @@ const { className } = Astro.props;
                         class="col-span-1 row-span-1 w-full object-cover rounded-3xl"
                         />
                       </div>
-                      <div class="bg-[#9A73B5] p-6 rounded-lg w-[80%] aspect-square">
+                      <div class="bg-[#9A73B5] p-6 rounded-lg w-[80%] self-stretch grid place-items-center">
                         <Image
                         src={solution.img2 || myImage}
                         alt="banner image"
@@ -113,7 +107,7 @@ const { className } = Astro.props;
                         class="col-span-1 row-span-1 w-full object-cover rounded-3xl"
                         />
                       </div>
-                      <div class="bg-[#9A73B5] p-6 rounded-lg w-[80%] aspect-square">
+                      <div class="bg-[#9A73B5] p-6 rounded-lg w-[80%] self-stretch grid place-items-center">
                         <Image
                         src={solution.img3 || myImage}
                         alt="banner image"
