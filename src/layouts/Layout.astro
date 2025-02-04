@@ -12,21 +12,40 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/agency-template/favicon.svg" />
+    <link rel="icon" type="image/png" href="/agency-template/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Agency template made with ASTROJS and TAILWINDCSS"
+      content="Saudi Controls"
     />
-    <title>Agency template - {title}</title>
+    <title>Saudi Controls {title}</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/agency-template/style/custom.css" />
+    <style>
+      body {
+        position: relative;
+        overflow: hidden;
+      }
+      video.background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+      }
+    </style>
   </head>
   <body class="overflow-hidden overflow-y-auto bg-body">
+    <video class="background-video" autoplay muted loop>
+      <source src="/path/to/your/video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
     <Navbar />
     <slot />
     <Footer />

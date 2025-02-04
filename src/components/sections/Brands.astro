@@ -6,68 +6,68 @@ import Title from "../shared/Title.astro";
 import spotify from "../../assets/logos/spotify.png";
 import slack from "../../assets/logos/slack.png";
 import paypallogo from "../../assets/logos/paypallogo.png";
+import p1 from '../../assets/images/Partners/p1.png'
+import p2 from '../../assets/images/Partners/p2.jpg'
+import p3 from '../../assets/images/Partners/p3.jpg'
+import p4 from '../../assets/images/Partners/p4.jpg'
+import p5 from '../../assets/images/Partners/p5.jpg'
+import p6 from '../../assets/images/Partners/p6.jpg'
+import p7 from '../../assets/images/Partners/p7.jpg'
+import p8 from '../../assets/images/Partners/p8.jpg'
+import p9 from '../../assets/images/Partners/p9.jpg'
+import p10 from '../../assets/images/Partners/p10.jpg'
 
 const brands = [
   {
     id: 1,
     name: "Spotify",
-    logo: spotify,
+    logo: p1,
   },
   {
     id: 2,
     name: "Slack",
-    logo: slack,
+    logo: p2,
   },
   {
     id: 3,
     name: "Paypal",
-    logo: paypallogo,
+    logo: p3,
   },
   {
     id: 4,
     name: "Spotify",
-    logo: spotify,
+    logo: p4,
   },
   {
     id: 5,
     name: "Slack",
-    logo: slack,
+    logo: p5,
   },
   {
     id: 6,
     name: "Paypal",
-    logo: paypallogo,
+    logo: p6,
   },
   {
     id: 7,
     name: "Spotify",
-    logo: spotify,
+    logo: p7,
   },
   {
     id: 8,
     name: "Slack",
-    logo: slack,
+    logo: p8,
   },
   {
     id: 9,
     name: "Paypal",
-    logo: paypallogo,
+    logo: p9,
   },
   {
     id: 10,
     name: "Spotify",
-    logo: spotify,
-  },
-  {
-    id: 11,
-    name: "Slack",
-    logo: slack,
-  },
-  {
-    id: 12,
-    name: "Paypal",
-    logo: paypallogo,
-  },
+    logo: p10,
+  }
 ];
 
 export interface Props {
@@ -88,10 +88,10 @@ const { className } = Astro.props;
           <div class="p-4 sm:p-5 rounded-xl border border-box-border group bg-box-bg">
             <Image
               src={brand.logo}
-              width="100"
-              height="60"
+              width="500"
+              height="560"
               alt={brand.name}
-              class="h-7 sm:h-10 w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
+              class="h-7 sm:h-[8rem] w-auto ease-linear duration-300 grayscale group-hover:!grayscale-0 group-hover:scale-105"
             />
           </div>
         ))

@@ -1,6 +1,14 @@
 import visibilityDilemma from "../assets/images/visibility-dilemma.jpg";
 import engagementGap from "../assets/images/engagement-gap.jpg";
 import resultsInHibernation from "../assets/images/results-in-hibernation.jpg";
+import Op1 from "../assets/images/Operations/pic1.png";
+import Op2 from "../assets/images/Operations/pic2.png";
+import Op3 from "../assets/images/Operations/pic3.png";
+import T1 from "../assets/images/Technologies/pic1.png";
+import T2 from "../assets/images/Technologies/pic2.jpg";
+import T3 from "../assets/images/Technologies/pic3.png";
+import T4 from "../assets/images/Technologies/pic4.jpg";
+import T5 from "../assets/images/Technologies/pic5.jpg";
 
 const services = [
   {
@@ -8,14 +16,14 @@ const services = [
     features: [
       "Advanced Audience Segmentation",
       "Data-Driven Insights",
-      "Personalized Content Creation",
+      "Personalized System Design",
     ],
     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" stroke-width="1.5" fill="currentColor" class="w-6 h-6"><path d="M256 0c17.7 0 32 14.3 32 32V42.4c93.7 13.9 167.7 88 181.6 181.6H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H469.6c-13.9 93.7-88 167.7-181.6 181.6V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V469.6C130.3 455.7 56.3 381.7 42.4 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H42.4C56.3 130.3 130.3 56.3 224 42.4V32c0-17.7 14.3-32 32-32zM107.4 288c12.5 58.3 58.4 104.1 116.6 116.6V384c0-17.7 14.3-32 32-32s32 14.3 32 32v20.6c58.3-12.5 104.1-58.4 116.6-116.6H384c-17.7 0-32-14.3-32-32s14.3-32 32-32h20.6C392.1 165.7 346.3 119.9 288 107.4V128c0 17.7-14.3 32-32 32s-32-14.3-32-32V107.4C165.7 119.9 119.9 165.7 107.4 224H128c17.7 0 32 14.3 32 32s-14.3 32-32 32H107.4zM256 224a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>`,
   },
   {
-    title: "Captivating Content",
+    title: "EV charging for Smart Cities",
     features: [
-      "Creative Storytelling",
+      "First of the few companies who work in this field",
       "Compelling Visuals",
       "Interactive Media",
     ],
@@ -61,34 +69,44 @@ const services = [
 
 const solutions = [
   {
-    title: "Visibility Dilemma",
+    title: "OverView",
     painPoint:
-      "Your brand is drowning in the vast sea of social media, struggling to be seen by your target audience.",
+      "Saudi Controls Ltd. is one of the foremost engineering and systems integration companies in Saudi Arabia going back 25 years.",
     agitatepainPoint:
-      "It's disheartening when your carefully crafted content goes unnoticed. Your potential customers are out there, but they simply can't find you amidst the digital noise.",
+      "Saudi Controls has branched out from its head office in Riyadh to every corner of the kingdom, providing technical solutions utilizing state of the art innovations in various fields of civil and security systems to an ever expanding client base with which we share a long-term relationship built on trust and reliability.",
     solution:
-      "Our targeted visibility strategies cut through the clutter, ensuring your brand is not just seen but remembered. Watch our video to see how we make your presence impossible to ignore.",
+      "Over the last 25 years we have worked closely with our customers to successfully complete more than 200 projects, leveraging cutting-edge technological savvy and a wide network of high profile partners to carve out a place as pioneers in the business.",
     img: visibilityDilemma,
+    index: 1,
   },
   {
-    title: "Engagement Gap",
+    title: "Operation and Maintenance",
     painPoint:
-      "Despite your efforts, audience engagement remains lackluster, and interactions are not translating into meaningful connections.",
+      "The ability to integrate operations and maintenance constraints from the design stage is key to guaranteeing that the system is functional and maintained in line with budget forecasts throughout its useful life.",
     agitatepainPoint:
-      "It's frustrating to see competitors effortlessly engaging their audience while your brand struggles to spark conversations. Your content deserves better results, and we have the solution.",
+      "SCL boasts this unique knowhow thanks to its engineers who are specialized in operations and maintenance.",
     solution:
-      "Our proven engagement tactics ignite conversations, turning passive viewers into active participants. Explore how we bridge the engagement gap in our video walkthrough.",
-    img: engagementGap,
+      "SCL sometimes goes beyond its role of engineering and project management and operates and maintains the following systems infrastructures.",
+    img1: Op1,
+    img2: Op2,
+    img3: Op3,
+    index: 2,
   },
   {
-    title: "Results in Hibernation",
+    title: "Solution & Technologies",
     painPoint:
-      "Your social media efforts aren't translating into tangible results, leaving you wondering if your investment is paying off.",
+      "Saudi Controls specializes in personalized solutions that encompass a wide range of high-tech fields, from building systems to the industrial sector, from communications to security.",
     agitatepainPoint:
-      "It's disheartening when the metrics show little growth or impact. Your time and resources are valuable, and it's time to break free from the cycle of stagnant results.",
+      "Our decades of experience on the cusp of the latest technologies and our extensive network of experts allow us to provide full-fledged products and services across the entire spectrum of modern technological needs.",
     solution:
-      "Our data-driven approach ensures every action is purposeful, yielding measurable results. Dive into our video guide to witness how we turn social media activities into a powerful engine for your brand's success.",
+      "Our data-driven approach ensures every action is purposeful, yielding measurable results.",
     img: resultsInHibernation,
+    img1: T1,
+    img2: T2,
+    img3: T3,
+    img4: T4,
+    img5: T5,
+    index: 3,
   },
 ];
 

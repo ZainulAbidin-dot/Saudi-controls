@@ -6,6 +6,9 @@ import Title from "../shared/Title.astro";
 import GradiantText from "../shared/GradiantText.astro";
 import myImage from "../../assets/images/dev-with-c-1.webp";
 import { solutions } from "../../utils/data.ts";
+import GlassBackground from "../shared/GlassBackground.astro";
+import GlassCard from "../shared/GlassCard.astro";
+import FlipCard from '../shared/FlipCard.astro'
 
 type SolutionsProps = {
   title: string;
@@ -13,6 +16,13 @@ type SolutionsProps = {
   agitatepainPoint: string;
   solution: string;
   img: ImageMetadata;
+  index: number;
+  img1?: ImageMetadata;
+  img2?: ImageMetadata;
+  img3?: ImageMetadata;
+  img4?: ImageMetadata;
+  img5?: ImageMetadata;
+  img6?: ImageMetadata;
 };
 
 export interface Props {
@@ -20,50 +30,159 @@ export interface Props {
 }
 
 const { className } = Astro.props;
+
+
 ---
 
 <section id="solutions" class=`flex flex-col ${className}`>
-  {
-    solutions.map((solution: SolutionsProps, index: number) => {
+    {
+    solutions.map((solution: typeof solutions[0], index: number) => {
       const oddIndex = index % 2 === 0;
       const flexRow = oddIndex ? "midmd:flex-row-reverse" : "midmd:flex-row";
       const bgColor = oddIndex
-        ? "bg-orange-100 dark:bg-gray-800 "
+        ? "bg-[#DCD6F7] dark:bg-[#61398F]"
         : "bg-transparent";
       return (
         <div class={`w-100 py-10 md:py-16 ${bgColor}`}>
           <div
             class={`flex flex-col gap-10 lg:gap-12 ${flexRow} mx-auto max-w-7xl w-full`}
           >
-            <div class="max-w-md mx-auto w-11/12 flex-1 flex midmd:w-7/12 lg:w-1/2 flex-col">
+            <div class="max-w-md mx-auto w-11/12 flex-1 flex midmd:w-9/12 lg:w-2/3 flex-col">
               <Title>
-                <GradiantText>{solution.title}</GradiantText>
+                {solution.index === 2 ? (
+                  <>
+                    <GradiantText>{solution.title}</GradiantText>
+                    <Paragraph className="mt-8 font-medium text:lg md:text-2xl">
+                      {solution.painPoint}
+                    </Paragraph>
+                    <Paragraph className="mt-3">
+                      {solution.agitatepainPoint}
+                    </Paragraph>
+                    <Paragraph className="mt-3 font-medium">
+                      {solution.solution}
+                    </Paragraph>
+                  </>
+                ) : (
+                  <>
+                    <span class={`text-[#444]`}>{solution.title}</span>
+                    <Paragraph className="mt-8 font-medium text:lg md:text-2xl ">
+                      {solution.painPoint}
+                    </Paragraph>
+                    <Paragraph className="mt-3 ">
+                      {solution.agitatepainPoint}
+                    </Paragraph>
+                    <Paragraph className="mt-3 font-medium ">
+                      {solution.solution}
+                    </Paragraph>
+                  </>
+                )}
               </Title>
-              <Paragraph className="mt-8 font-medium text:lg md:text-2xl">
-                {solution.painPoint}
-              </Paragraph>
-              <Paragraph className="mt-3 ">
-                {solution.agitatepainPoint}
-              </Paragraph>
-              <Paragraph className="mt-3 font-medium">
-                {solution.solution}
-              </Paragraph>
-            </div>
 
-            <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-11/12 midmd:w-5/12 lg:w-1/2 midmd:h-auto">
-              <div class="w-full h-80 sm:h-96 midmd:h-full relative">
-                <Image
-                  src={solution.img}
-                  alt="banner image"
-                  width="1240"
-                  height="1385"
-                  class="w-auto left-1/2 -translate-x-1/2 absolute bottom-0 max-h-full rounded-3xl object-cover"
-                />
+            </div>
+            
+            <div class="max-w-md mx-auto midmd:max-w-none lg:mx-0 lg:pr-10 xl:pr-2 flex-1 flex w-3/12 midmd:w-2/12 lg:w-1/3 midmd:h-auto">
+              <div class="w-full h-80 sm:h-96 midmd:h-full relative pointer-events-none">
+                <!-- Spline Viewer -->
+                {
+                  solution.index === 1 ? (
+                    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js"></script>
+                    <spline-viewer 
+                    url="https://prod.spline.design/qI2wFHJ-PJi1erLH/scene.splinecode"
+                    disableZoom="true" background="transparent">
+                    </spline-viewer>
+                  ) : solution.index === 2 ? (
+                    <div class="grid grid-cols-3 gap-4 h-full mx-auto content-center">
+
+                      {/* <FlipCard /> */}
+
+                      <div class="bg-[#9A73B5] p-6 rounded-lg w-[80%] aspect-square">
+                        <Image
+                        src={solution.img1 || myImage}
+                        alt="banner image"
+                        width="1240"
+                        height="1385"
+                        class="col-span-1 row-span-1 w-full object-cover rounded-3xl"
+                        />
+                      </div>
+                      <div class="bg-[#9A73B5] p-6 rounded-lg w-[80%] aspect-square">
+                        <Image
+                        src={solution.img2 || myImage}
+                        alt="banner image"
+                        width="1240"
+                        height="1385"
+                        class="col-span-1 row-span-1 w-full object-cover rounded-3xl"
+                        />
+                      </div>
+                      <div class="bg-[#9A73B5] p-6 rounded-lg w-[80%] aspect-square">
+                        <Image
+                        src={solution.img3 || myImage}
+                        alt="banner image"
+                        width="1240"
+                        height="1385"
+                        class="col-span-1 row-span-1 w-full object-cover rounded-3xl"
+                        />
+                      </div>
+                    </div>
+                    // <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js" async></script>
+                    // <spline-viewer 
+                    //   url="https://prod.spline.design/qyye9I2KG9NJXrvQ/scene.splinecode" 
+                    //   disableZoom="true" background="transparent">
+                    // </spline-viewer>
+                    ) : (
+                    <div class="grid grid-cols-3 grid-rows-2 gap-4 w-full h-full">
+                      <Image
+                      src={solution.img1 || myImage}
+                      alt="banner image"
+                      width="1240"
+                      height="1385"
+                      class="col-span-1 row-span-1 w-[70%] h-[70%] object-cover rounded-lg"
+                      />
+                      <Image
+                      src={solution.img2 || myImage}
+                      alt="banner image"
+                      width="1240"
+                      height="1385"
+                      class="col-span-1 row-span-1 w-[70%] h-[70%] object-cover rounded-lg"
+                      />
+                      <Image
+                      src={solution.img3 || myImage}
+                      alt="banner image"
+                      width="1240"
+                      height="1385"
+                      class="col-span-1 row-span-1 w-[70%] h-[70%] object-cover rounded-lg"
+                      />
+                      <Image
+                      src={solution.img4 || myImage}
+                      alt="banner image"
+                      width="1240"
+                      height="1385"
+                      class="col-span-1 row-span-1 w-[70%] h-[70%] object-cover rounded-lg"
+                      />
+                      <Image
+                      src={solution.img5 || myImage}
+                      alt="banner image"
+                      width="1240"
+                      height="1385"
+                      class="col-span-1 row-span-1 w-[70%] h-[70%] object-cover rounded-lg"
+                      />
+                      <Image
+                      src={myImage}
+                      alt="banner image"
+                      width="1240"
+                      height="1385"
+                      class="col-span-1 row-span-1 w-full h-full object-cover rounded-lg"
+                      />
+                    </div>
+                  )
+                }
+                {/* 
+                 */}
               </div>
             </div>
           </div>
         </div>
       );
     })
+    
   }
 </section>
